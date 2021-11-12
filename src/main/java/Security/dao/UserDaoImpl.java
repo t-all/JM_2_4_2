@@ -2,13 +2,14 @@ package Security.dao;
 
 import Security.model.User;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 
-@Component
+@Repository
 public class UserDaoImpl implements UserDao {
 
     @PersistenceContext
@@ -26,8 +27,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void deleteUserById(Long id) {
-//        entityManager.remove(getUserById(id));
-                entityManager.createQuery("delete from User o where o.id=:id").setParameter("id", id).executeUpdate();
+        entityManager.createQuery("delete from User o where o.id=:id").setParameter("id", id).executeUpdate();
     }
 
     @Override

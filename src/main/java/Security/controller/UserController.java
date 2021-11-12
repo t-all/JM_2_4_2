@@ -65,8 +65,6 @@ public class UserController {
         return "new";
     }
 
-
-
     @PostMapping("/admin/create")
     public String addUser(@ModelAttribute User user, @RequestParam(value = "checkBoxRoles") String[] checkBoxRoles) {
         Set<Role> roleSet = new HashSet<>();
@@ -97,18 +95,9 @@ public class UserController {
         return "redirect:/admin";
     }
 
-
-//    @GetMapping("delete/{id}")
-//    public String deleteUser(@PathVariable("id") Long id) {
-//        userService.deleteUserById(id);
-//        return "redirect:/admin";
-//    }
-
     @DeleteMapping("delete/{id}")
     public String delete(@PathVariable("id") Long id) {
         userService.deleteUserById(id);
         return "redirect:/admin";
     }
-
-
 }

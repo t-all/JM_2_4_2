@@ -48,7 +48,7 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, String password, String name, String surname, String address, String phone, String email, Set<Role> roles) {
+    public User(String username, String password, String name, String surname, String address, String phone, String email /*Set<Role> roles*/) {
 
         this.username = username;
         this.password = password;
@@ -57,7 +57,7 @@ public class User implements UserDetails {
         this.address = address;
         this.phone = phone;
         this.email = email;
-        this.roles = roles;
+//        this.roles = roles;
     }
 
     public Long getId() {

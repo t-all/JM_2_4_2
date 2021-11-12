@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+</head>
+<body>
+<h2>All users:</h2>
+<table th:border="1" style="width: auto">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Address</th>
+        <th>Phone number</th>
+        <th>E-mail</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.getId()}"></td>
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getSurname()}"></td>
+        <td th:text="${user.getAddress()}"></td>
+        <td th:text="${user.getPhone()}"></td>
+        <td th:text="${user.getEmail()}"></td>
+
+        <td>
+            <form th:action="@{/users/edit/{id}(id=${user.getId()})}">
+                <input type="submit" value="Update"/>
+            </form>
+        </td>
+
+
+        <td>
+            <form th:method="delete" th:action="@{/users/delete/{id}(id=${user.getId()})}">
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+<br/>
+<hr/>
+<a href="/users/new">Create new user</a>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+</head>
+<body>
+<div>
+  <h2>Edit user</h2>
+  <form action="/edit" th:method="put">
+    <table border="0">
+      <tr>
+        <td>ID:</td>
+        <td><input type="number" th:field="*{user.id}" readonly/></td>
+      </tr>
+      <tr>
+        <td>Username:</td>
+        <td><input type="text" th:field="*{user.username}"/></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="text" th:field="*{user.password}"/></td>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" th:field="*{user.name}"/></td>
+      </tr>
+      <tr>
+        <td>Surname:</td>
+        <td><input type="text" th:field="*{user.surname}"/></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><input type="text" th:field="*{user.address}"/></td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td><input type="text" th:field="*{user.phone}"/></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" th:field="*{user.email}"/></td>
+      </tr>
+           <input type="checkbox" name="checkBoxRoles" value="ROLE_USER"/>USER
+      <input type="checkbox" name="checkBoxRoles" value="ROLE_ADMIN"/>ADMIN
+      <br/>
+    </table>
+    <br/>
+    <td colspan="2"><input type="submit" value="Edit"></td>
+    <br/>
+    <br/>
+    <a th:href="@{/logout}">logout</a>
+  </form>
+</div>
+</body>
+</html>

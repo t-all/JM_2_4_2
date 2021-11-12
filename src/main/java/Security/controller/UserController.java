@@ -28,20 +28,20 @@ public class UserController {
     }
 
 
-    @PostConstruct
-    public void loadUserd() {
-        Role role1 = new Role("ROLE_ADMIN");
-        Role role2 = new Role("ROLE_USER");
-        User user1 = new User("Bob","qwe","Bobby","Bob","Moon 13","+375892154","bob@test.com",Set.of(role1, role2));
-        User user2 = new User("Bil","qwe","Billy","Bil","Earth 1","+935892154","bil@test.com",Set.of(role2));
-        User user3 = new User("Tom","qwe","Tommy","Tom","Venus 5","+475892154","tom@test.com",Set.of(role2));
-        User user4 = new User("Sam","qwe","Sammy","Sam","Jupiter 34","+175892154","sam@test.com", Set.of(role1));
-
-        userService.addUser(user1);
-        userService.addUser(user2);
-        userService.addUser(user3);
-        userService.addUser(user4);
-    }
+//    @PostConstruct
+//    public void loadUserd() {
+//        Role role1 = new Role("ROLE_ADMIN");
+//        Role role2 = new Role("ROLE_USER");
+//        User user1 = new User("Bob","qwe","Bobby","Bob","Moon 13","+375892154","bob@test.com",Set.of(role1, role2));
+//        User user2 = new User("Bil","qwe","Billy","Bil","Earth 1","+935892154","bil@test.com",Set.of(role2));
+//        User user3 = new User("Tom","qwe","Tommy","Tom","Venus 5","+475892154","tom@test.com",Set.of(role2));
+//        User user4 = new User("Sam","qwe","Sammy","Sam","Jupiter 34","+175892154","sam@test.com", Set.of(role1));
+//
+//        userService.addUser(user1);
+//        userService.addUser(user2);
+//        userService.addUser(user3);
+//        userService.addUser(user4);
+//    }
 
 
     @GetMapping("/user")

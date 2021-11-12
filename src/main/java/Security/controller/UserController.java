@@ -36,10 +36,7 @@ public class UserController {
         User user2 = new User("Bil","qwe","Billy","Bil","Earth 1","+935892154","bil@test.com",Set.of(role2));
         User user3 = new User("Tom","qwe","Tommy","Tom","Venus 5","+475892154","tom@test.com",Set.of(role2));
         User user4 = new User("Sam","qwe","Sammy","Sam","Jupiter 34","+175892154","sam@test.com", Set.of(role1));
-        user1.setRoles(Set.of(role1));
-        user2.setRoles(Set.of(role1, role2));
-        user3.setRoles(Set.of(role2));
-        user4.setRoles(Set.of(role2));
+
         userService.addUser(user1);
         userService.addUser(user2);
         userService.addUser(user3);
